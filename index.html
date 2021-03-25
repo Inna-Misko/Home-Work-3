@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.7.0/modern-normalize.min.css" />
+    <link rel="stylesheet" href="./css/main.css">
+    <title>
+        Guess a number
+    </title>
+</head>
+<body>
+            
+                <div class="field">
+                    <h1>Угадай число</h1>
+                    <form class="field__settings">
+                        <span>Выбери количество попыток от 1 до 15:</span>
+                        <input type="number" class="field__settings--attempts" id="attempts">
+                    
+                        <span>Минимальное число от 1 до 100:</span>
+                        <input type="number" class="field__settings--min" id="minNumber">
+                    
+                        <span>Максимальное число число от 100 до 200:</span>
+                        <input type="number" class="field__settings--max" id="maxNumber">
+                    
+                        <button class="btn field__settings--btn" id="settingsBtn">Применить настройки</button>
+                        
+                    </form>
+<div class="field__settings--text" id="textSettings"></div>
+                    <div class="field__game">
+                        <form>
+                            <input type="number" placeholder="Введите число" class="field__game--enternumber" id="enteredNumber">
+                            <div>
+                                <button class="btn field__game--generate" id="generate">Generate</button>
+                                <button class="btn field__game--exit" id="exit">Exit</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                <div class="field__game--out-text" id="outSpan"></div>
+                </div>
+               
+            </div>
+        <script src="./js/main.js"></script>
+</body>
+</html>
