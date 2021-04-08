@@ -13,13 +13,14 @@ var refs = {
     outMessageRef: document.getElementById('outSpan')
 }
 
+var attemptValue = 5;
 
 refs.settingsBtnRef.addEventListener('click', function getValueInput(e) {
     e.preventDefault()
 
     var minValue = refs.minNumberRef.value;
     var maxValue = refs.maxNumberRef.value;
-    var attemptValue = refs.attemptInputRef.value;
+  attemptValue = refs.attemptInputRef.value;
     
     if (minValue > 0 && minValue <= 100 &&
         maxValue <= 200 && maxValue >= 100 &&
@@ -40,8 +41,7 @@ function getRandomNumber(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
 
-var attempts = refs.attemptInputRef.value;
-var attemptsCount = attempts;
+var attemptsCount = attemptValue;
  
 refs.generateBtnRef.addEventListener('click', function checkTheNumber(e) {
     e.preventDefault()
@@ -52,7 +52,7 @@ refs.generateBtnRef.addEventListener('click', function checkTheNumber(e) {
     var enterVal = +refs.theNumberRef.value
     if (!enterVal) return
 
-    attemptsCount--
+    attemptsCount = --refs.attemptInputRef.value;
 
     if (+enterVal > randomNumber) {
     refs.outMessageRef.textContent = `'Пока холодно, число меньше ;) Осталось ${attemptsCount} попыток'`
